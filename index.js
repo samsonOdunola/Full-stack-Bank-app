@@ -5,7 +5,7 @@ const cors = require("cors");
 
 require("dotenv").config();
 App.get("/*", (req, res) => {
-  res.sendFile(__dirname + "/build/index.html/");
+  res.sendFile(__dirname + "/build/index.html");
 });
 App.use(express.static("./build"));
 App.use(express.urlencoded({ extended: true, limit: "50mb" }));
