@@ -36,6 +36,7 @@ const registerUser = (req, res) => {
 };
 
 const loginUser = (req, res) => {
+  console.log(req.body);
   const { password, email } = req.body;
   userModel.findOne(
     {
