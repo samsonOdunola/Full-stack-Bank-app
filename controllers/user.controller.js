@@ -37,14 +37,14 @@ const registerUser = (req, res) => {
 
 const loginUser = (req, res) => {
   // console.log(req);
-  console.log(req.body);
+  // console.log(req.body);
   const { password, email } = req.body;
   userModel.findOne(
     {
       email: email,
     },
     (err, result) => {
-      console.log(err, result);
+      // console.log(err, result);
       if (!result) {
         res.send({ message: "Email does not exist", status: false });
       } else if (result) {
