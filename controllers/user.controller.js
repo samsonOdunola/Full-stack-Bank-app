@@ -42,6 +42,7 @@ const loginUser = (req, res) => {
       email: email,
     },
     (err, result) => {
+      console.log(err, result);
       if (!result) {
         res.send({ message: "Email does not exist", status: false });
       } else if (result) {
