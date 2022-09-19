@@ -13,9 +13,8 @@ App.get("/*", (req, res) => {
 });
 App.use(express.urlencoded({ extended: true, limit: "50mb" }));
 App.use(express.json({ limit: "50mb" }));
-App.use("/user", userRouter);
-
 App.use(cors());
+App.use("/user", userRouter);
 
 App.listen(port, () => {
   console.log("Server is running on port " + port);
