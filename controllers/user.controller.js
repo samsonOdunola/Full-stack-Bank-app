@@ -52,7 +52,7 @@ const loginUser = (req, res) => {
           if (err) {
             res.send({ message: "Server Error", staus: false });
           } else if (same) {
-            let token = jwt.sign({ email }, JWT_SECRET, { expiresIn: "1h" });
+            let token = jwt.sign({ email }, JWT_SECRET, { expiresIn: "6h" });
             res.send({
               message: "Login Successfull",
               status: true,
@@ -69,10 +69,11 @@ const loginUser = (req, res) => {
 };
 
 const getCurrentUserInfo = (req, res) => {
-  console.log(req);
+  console.log(req.headers);
   let token = req.headers.authorization.split(" ")[1];
 
   jwt.verify(token, JWT_SECRET, (err, result) => {
+    console.log(err, result);
     if (err) {
       res.send({ status: false });
     } else {
