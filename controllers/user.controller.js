@@ -36,7 +36,7 @@ const registerUser = (req, res) => {
 };
 
 const loginUser = (req, res) => {
-  console.log(req);
+  // console.log(req);
   console.log(req.body);
   const { password, email } = req.body;
   userModel.findOne(
@@ -69,6 +69,7 @@ const loginUser = (req, res) => {
 };
 
 const getCurrentUserInfo = (req, res) => {
+  console.log(req);
   let token = req.headers.authorization.split(" ")[1];
 
   jwt.verify(token, JWT_SECRET, (err, result) => {
