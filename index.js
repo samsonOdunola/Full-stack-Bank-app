@@ -4,10 +4,10 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 require("dotenv").config();
+App.use(express.static("./build"));
 App.get("/*", (req, res) => {
   res.sendFile(__dirname + "/build/index.html");
 });
-App.use(express.static("./build"));
 App.use(express.urlencoded({ extended: true, limit: "50mb" }));
 App.use(express.json({ limit: "50mb" }));
 App.use(cors());
