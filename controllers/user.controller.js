@@ -69,7 +69,7 @@ const loginUser = (req, res) => {
 };
 
 const getCurrentUserInfo = (req, res) => {
-  console.log(req.headers);
+  console.log(req);
   let token = req.headers.authorization.split(" ")[1];
 
   jwt.verify(token, JWT_SECRET, (err, result) => {
