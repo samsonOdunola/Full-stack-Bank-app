@@ -69,11 +69,10 @@ const loginUser = (req, res) => {
 };
 
 const getCurrentUserInfo = (req, res) => {
-  console.log(req, res);
+  console.log(req.headers);
   let token = req.headers.authorization.split(" ")[1];
 
   jwt.verify(token, JWT_SECRET, (err, result) => {
-    console.log(err, result);
     if (err) {
       res.send({ status: false });
     } else {
