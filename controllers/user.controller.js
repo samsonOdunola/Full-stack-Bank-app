@@ -133,20 +133,7 @@ const postTransaction = (req, res) => {
     }
   );
 };
-// const validateToken = (req, res) => {
-//   let token = req.headers.authorization.split(" ")[1];
-//   jwt.verify(token, JWT_SECRET, (err, result) => {
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       console.log(result);
-//       userModel.findOne({ email: result.email }, (err, result) => {
-//         console.log(result);
-//         res.send({ result, status: true });
-//       });
-//     }
-//   });
-// };
+
 module.exports = {
   testApi,
   registerUser,
