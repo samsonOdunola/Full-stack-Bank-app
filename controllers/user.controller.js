@@ -21,7 +21,7 @@ const registerUser = (req, res) => {
   cloudinary.v2.uploader.upload(myImage, (error, result) => {
     if (error) {
       console.log(error);
-      res.send({ message: "Error in creating Account", status: false });
+      res.send({ message: "Please upload image", status: false });
     } else {
       let form = new userModel({ ...req.body, image: result.secure_url });
       form.save((err) => {
@@ -36,8 +36,6 @@ const registerUser = (req, res) => {
 };
 
 const loginUser = (req, res) => {
-  // console.log(req);
-  // console.log(req.body);
   const { password, email } = req.body;
   userModel.findOne(
     {
