@@ -16,8 +16,6 @@ App.get("/*", (req, res) => {
   res.sendFile(__dirname + "/build/index.html");
 });
 
-
-
 mongoose.connect(URI, (err) => {
   if (err) {
     console.log("Mongoose did not connect");
@@ -25,6 +23,6 @@ mongoose.connect(URI, (err) => {
     console.log("mongoose connected successfully");
   }
   App.listen(port, () => {
-  console.log("Server is running on port " + port);
-});
+    console.log("Server is running on port " + port);
+  });
 });
